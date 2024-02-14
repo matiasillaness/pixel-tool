@@ -1,0 +1,47 @@
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h1 style="text-align: center; color: white;">Lands</h1>
+    
+    <div>
+        <button  (click)="restar();createArray(this.buscarDesde)" name="Siguiente" type="button" style="width: 100px; height: 30px;  ">Atras</button>
+        <input (input)="desde($event); createArray(this.buscarDesde)"  type="number" name="Buscar Desde" style="width: 200px; margin: 20px;  height: 30px; border: none; text-align: center;" placeholder="Buscar Desde" id="">
+        <button  (click)="sumar();createArray(this.buscarDesde)" type="button" name="Atras" style="width: 100px; height: 30px;"> Adelante</button>
+    </div>
+
+    
+    <select style="margin-top: 10px; margin-bottom: 10px;" (change)="onChange($event); createArray(this.buscarDesde)" name="cantidadPantallas" id="cantidadPantallas">
+        <option value="10">10 pantallas</option>
+        <option value="1">1 pantalla</option>
+        <option value="2">2 pantallas</option>
+        <option value="3">3 pantallas</option>
+        <option value="4">4 pantallas</option>
+        <option value="5">5 pantallas</option>
+        <option value="6">6 pantallas</option>
+        <option value="7">7 pantallas</option>
+        <option value="8">8 pantallas</option>
+        <option value="9">9 pantallas</option>
+        <option value="11">11 pantallas</option>
+        <option value="12">12 pantallas</option>
+        <option value="13">13 pantallas</option>
+        <option value="14">14 pantallas</option>
+        <option value="15">15 pantallas</option>
+        <option value="16">16 pantallas</option>
+        <option value="17">17 pantallas</option>
+        <option value="18">18 pantallas</option>
+        <option value="19">19 pantallas</option>
+        <option value="20">20 pantallas</option>
+    </select>
+</div>
+  
+
+    <div  style="display: flex; flex-direction: row; margin: 0%;" >
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; margin: 0%;">
+            @for (item of LANDS; track $index) {
+                <div class="" style="position: relative">
+                    <iframe style="height: 500px; width: 500px;"  [src]="item.url | safe" frameborder="0" ></iframe>
+                    <h3 style="font-size:30px; top:20px; left:20px;color: rgb(255, 255, 255) ; position: absolute; z-index:2;">{{item.id}}</h3>
+                </div>   
+        }
+        </div>
+    </div>
+
